@@ -1,0 +1,12 @@
+[versions]
+bytebuddy = "1.15.11"
+asm = "9.7.1"
+
+shadow = "9.0.0-beta4"
+
+[libraries]
+bytebuddy-agent = { module = "net.bytebuddy:byte-buddy-agent", version.ref = "bytebuddy" }
+asm = { module = "org.ow2.asm:asm", version.ref = "asm" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
