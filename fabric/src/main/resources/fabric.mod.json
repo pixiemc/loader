@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "pixie-loader",
+  "version": "${version}",
+  "name": "Pixie Loader",
+  "description": "A mod to load Pixie into Essential Mod for scenarios where you don't want to use the environment variable.",
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/pixiemc"
+      }
+    }
+  },
+  "authors": [],
+  "contact": {
+    "homepage": "https://pixie.rip/",
+    "sources": "https://github.com/pixiemc/loader"
+  },
+  "license": "unlicense",
+  "icon": "assets/pixie_launcher/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "preLaunch": [
+      "rip.pixie.fabric.Entrypoint"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}"
+  }
+}
