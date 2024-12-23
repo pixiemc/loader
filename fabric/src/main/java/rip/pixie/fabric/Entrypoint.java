@@ -7,6 +7,6 @@ public class Entrypoint implements PreLaunchEntrypoint {
 
     @Override
     public void onPreLaunch() {
-        EssentialTransformer.transgender();
+        EssentialTransformer.transform();
     }
 }
