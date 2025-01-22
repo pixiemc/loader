@@ -1,0 +1,11 @@
+[
+  {
+    "modid": "pixie_loader",
+    "name": "Pixie Loader",
+    "description": "A mod to load Pixie into Essential Mod for scenarios where you don't want to, or can't, set the environment variable.",
+    "version": "${version}",
+    "mcversion": "1.8.9",
+    "url": "https://pixie.rip/",
+    "authorList": []
+  }
+]

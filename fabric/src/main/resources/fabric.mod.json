@@ -3,7 +3,7 @@
   "id": "pixie-loader",
   "version": "${version}",
   "name": "Pixie Loader",
-  "description": "A mod to load Pixie into Essential Mod for scenarios where you don't want to use the environment variable.",
+  "description": "A mod to load Pixie into Essential Mod for scenarios where you don't want to, or can't, set the environment variable.",
   "custom": {
     "modmenu": {
       "links": {

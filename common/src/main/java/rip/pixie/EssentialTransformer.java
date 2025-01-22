@@ -4,15 +4,14 @@ import net.bytebuddy.agent.ByteBuddyAgent;
 import org.objectweb.asm.*;
 
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
 import java.lang.instrument.Instrumentation;
 import java.security.ProtectionDomain;
 
 public class EssentialTransformer {
     private static class Transformer implements ClassFileTransformer {
         @Override
-        public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
-            if (!className.equals("gg/essential/network/connectionmanager/Connection")) {
+        public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) {
+            if (className == null || !className.equals("gg/essential/network/connectionmanager/Connection")) {
                 return null;
             }
 
@@ -33,6 +32,15 @@ public class EssentialTransformer {
                             } else {
                                 super.visitLdcInsn(value);
                             }
+                        }
+
+                        @Override
+                        public void visitCode() {
+                            super.visitCode();
+                            super.visitLdcInsn("wss://connect.essential.gg/v1");
+                            super.visitMethodInsn(Opcodes.INVOKESTATIC, "java/lang/System", "getProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", false);
+                            super.visitMethodInsn(Opcodes.INVOKESTATIC, "java/net/URI", "create", "(Ljava/lang/String;)Ljava/net/URI;", false);
+                            super.visitFieldInsn(Opcodes.PUTSTATIC, "gg/essential/network/connectionmanager/Connection", "CM_HOST_URI", "Ljava/net/URI;");
                         }
                     };
                 }

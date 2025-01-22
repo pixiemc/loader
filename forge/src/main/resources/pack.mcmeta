@@ -1,0 +1,6 @@
+{
+  "pack": {
+    "pack_format": 1,
+    "description": "A mod to load Pixie into Essential Mod for scenarios where you don't want to, or can't, set the environment variable."
+  }
+}
